@@ -1,0 +1,187 @@
+[
+    {
+        "category": "Bioretention",
+        "value": "BR",
+        "priority": 0
+    },
+    {
+        "category": "Composite",
+        "value": "CO",
+        "priority": 10
+    },
+    {
+        "category": "Control",
+        "value": "CX",
+        "priority": 20
+    },
+    {
+        "category": "Detention Basin",
+        "value": "DB",
+        "priority": 30
+    },
+    {
+        "category": "Detention Basin",
+        "value": "DC",
+        "priority": 30
+    },
+    {
+        "category": "Detention Basin",
+        "value": "DU",
+        "priority": 30
+    },
+    {
+        "category": "Grass Strip",
+        "value": "BI",
+        "priority": 40
+    },
+    {
+        "category": "Grass Swale",
+        "value": "BS",
+        "priority": 50
+    },
+    {
+        "category": "Green Roof",
+        "value": "GR",
+        "priority": 60
+    },
+    {
+        "category": "Infiltration Basin",
+        "value": "IB",
+        "priority": 70
+    },
+    {
+        "category": "LID",
+        "value": "LD",
+        "priority": 80
+    },
+    {
+        "category": "Maintenance Practice",
+        "value": "MC",
+        "priority": 90
+    },
+    {
+        "category": "Maintenance Practice",
+        "value": "MT",
+        "priority": 90
+    },
+    {
+        "category": "Manufactured Device",
+        "value": "MD",
+        "priority": 100
+    },
+    {
+        "category": "Media Filter",
+        "value": "FL",
+        "priority": 110
+    },
+    {
+        "category": "Media Filter",
+        "value": "FO",
+        "priority": 110
+    },
+    {
+        "category": "Media Filter",
+        "value": "FP",
+        "priority": 110
+    },
+    {
+        "category": "Media Filter",
+        "value": "FS",
+        "priority": 110
+    },
+    {
+        "category": "Media Filter",
+        "value": "FV",
+        "priority": 110
+    },
+    {
+        "category": "Other",
+        "value": "OT",
+        "priority": 120
+    },
+    {
+        "category": "Percolation Trench\/Well",
+        "value": "IT",
+        "priority": 130
+    },
+    {
+        "category": "Percolation Trench\/Well",
+        "value": "IW",
+        "priority": 130
+    },
+    {
+        "category": "Permeable Friction Course",
+        "value": "PF",
+        "priority": 140
+    },
+    {
+        "category": "Porous Pavement",
+        "value": "PA",
+        "priority": 150
+    },
+    {
+        "category": "Porous Pavement",
+        "value": "PC",
+        "priority": 150
+    },
+    {
+        "category": "Porous Pavement",
+        "value": "PG",
+        "priority": 150
+    },
+    {
+        "category": "Porous Pavement",
+        "value": "PM",
+        "priority": 150
+    },
+    {
+        "category": "Retention Pond",
+        "value": "RP",
+        "priority": 160
+    },
+    {
+        "category": "Retention Pond",
+        "value": "RV",
+        "priority": 160
+    },
+    {
+        "category": "Wetland Basin",
+        "value": "WB",
+        "priority": 170
+    },
+    {
+        "category": "Wetland Basin",
+        "value": "WM",
+        "priority": 170
+    },
+    {
+        "category": "Wetland Basin\/Retention Pond",
+        "value": "RP",
+        "priority": 180
+    },
+    {
+        "category": "Wetland Basin\/Retention Pond",
+        "value": "RV",
+        "priority": 180
+    },
+    {
+        "category": "Wetland Basin\/Retention Pond",
+        "value": "WB",
+        "priority": 180
+    },
+    {
+        "category": "Wetland Basin\/Retention Pond",
+        "value": "WM",
+        "priority": 180
+    },
+    {
+        "category": "Wetland Channel",
+        "value": "BW",
+        "priority": 190
+    },
+    {
+        "category": "Wetland Channel",
+        "value": "WC",
+        "priority": 190
+    }
+]

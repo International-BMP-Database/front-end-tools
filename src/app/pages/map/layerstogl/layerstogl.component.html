@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar transparent align-title="center">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <section class="gs-title-container">
+      <ion-title class="text-center">
+        {{pageTitle}}
+      </ion-title>
+    </section>
+    <ion-buttons slot="end">
+      <ion-button color="dark" (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form [formGroup]="form">
+    <ion-list formArrayName="overlays" justify-content-center align-items-center>
+      <ion-item *ngFor="let itm of frmOverlays.controls; let i = index" [formGroupName]="i" class="col">
+        <ion-label>{{payload?.overlays[i]?.title}}</ion-label>
+        <ion-checkbox formControlName="isChecked" slot="end"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <ion-list formArrayName="baselayers" justify-content-center align-items-center>
+      <ion-item *ngFor="let itm of frmBaseLayers.controls; let i = index" [formGroupName]="i" class="col">
+        <ion-label>{{payload?.baselayers[i]?.title}}</ion-label>
+        <ion-checkbox formControlName="isChecked" slot="end"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

@@ -1,0 +1,104 @@
+<div
+  id="map"
+  #mapElementRef
+  class="map"
+  style="width: 100%; width: 100vw; height: 100%; height: 100vh; position: fixed"
+></div>
+<div id="popup" class="ol-popup">
+  <h3 class="title">{{ engine?.selectedSite?.site }}</h3>
+  <a href="#" id="popup-closer" class="ol-popup-closer" (click)="closePopUp()"></a>
+  <div id="popup-content">
+    <ion-list>
+      <ion-item>
+        <ion-label>Site ID :</ion-label>
+        <span class="gs-value">{{ engine?.selectedSite?.site_id }}</span>
+      </ion-item>
+      <ion-item>
+        <ion-label>Site Name :</ion-label>
+        <span class="gs-value">{{ engine?.selectedSite?.site }}</span>
+      </ion-item>
+      <ion-item>
+        <ion-label>Location :</ion-label>
+        <span class="gs-value">{{ engine?.selectedSite?.location }}</span>
+      </ion-item>
+      <ion-item>
+        <ion-label>Category :</ion-label>
+        <span class="gs-value">{{ engine?.selectedSite?.category }}</span>
+      </ion-item>
+
+      <ion-item class="link" *ngIf="engine?.selectedSite?.summaryReportLink">
+        <ion-label>Summary report :</ion-label>
+        <span class="gs-value" (click)="openInNewTab(engine?.selectedSite?.summaryReportLink)">
+          <a>Click here</a>
+        </span>
+      </ion-item>
+      <ion-item *ngIf="engine?.selectedSite?.flowReportLink">
+        <ion-label>Flow & precip. summary :</ion-label>
+        <span class="gs-value" (click)="openInNewTab(engine?.selectedSite?.flowReportLink)">
+          <a>Click here</a>
+        </span>
+      </ion-item>
+      <ion-item *ngIf="engine?.selectedSite?.photo_url?.length">
+        <ion-label>Photos : </ion-label>
+        <span class="gs-value">
+          <a *ngFor="let itm of engine?.selectedSite?.photo_url" (click)="openInNewTab(itm)">
+            <img [src]="itm.replace('#http', 'http')" alt="bmp photo" />
+          </a>
+        </span>
+      </ion-item>
+      <ion-item>
+        <ion-label>Stats Analysis: </ion-label>
+
+        <!-- for sites with no parameters -->
+        <span
+          class="gs-value"
+          *ngIf="
+            !this.engine?.selectedSite?.cleanParams ||
+            !this.engine?.selectedSite?.cleanParams.length
+          "
+        >
+          <a>Not enough data</a>
+        </span>
+
+        <form
+          [formGroup]="statsForm"
+          *ngIf="
+            this.engine?.selectedSite?.cleanParams && this.engine?.selectedSite?.cleanParams.length
+          "
+        >
+          <mat-form-field>
+            <input
+              #input
+              type="text"
+              matInput
+              placeholder="Select Parameter"
+              [formControl]="statsParam"
+              required
+              [matAutocomplete]="autoGroup"
+            />
+
+            <mat-autocomplete
+              #autoGroup="matAutocomplete"
+              (optionSelected)="statsParamOptionSelectH($event); statsParam.value = ''"
+            >
+              <mat-optgroup
+                *ngFor="let group of statsParamGroupOptions$ | async"
+                [label]="group.paramGroup"
+              >
+                <mat-option
+                  (onSelectionChange)="
+                    statsParamonSelectionChangeH($event, group.paramGroup, param)
+                  "
+                  *ngFor="let param of group.params"
+                  [value]="param"
+                >
+                  {{ param }}
+                </mat-option>
+              </mat-optgroup>
+            </mat-autocomplete>
+          </mat-form-field>
+        </form>
+      </ion-item>
+    </ion-list>
+  </div>
+</div>

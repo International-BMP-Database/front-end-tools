@@ -1,0 +1,44 @@
+#bigmaplegend {
+  display: block;
+  z-index: 10000;
+  background: #fff;
+  border-radius: 10px;
+  font-size: 10px;
+  width: 260px;
+
+  ion-item {
+    height: 42px;
+  }
+
+  ion-label {
+    font-size: 13px;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .legenditem img {
+    max-width: 20px;
+    max-height: 20px;
+  }
+}
+
+.list-cont {
+  overflow-y: scroll;
+  max-height: 300px;
+}
+
+// begin show scrollbars
+.list-cont::-webkit-scrollbar {
+  width: 1em;
+  display: block !important;
+}
+
+.list-cont::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.list-cont::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}

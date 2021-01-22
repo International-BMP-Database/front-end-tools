@@ -1,0 +1,53 @@
+.gs-big-button {
+    max-height: 200px;
+    max-width: 200px;
+    min-height: 120px;
+    min-width: 120px;
+    overflow-wrap: normal;
+    margin: auto;
+}
+
+.gs-button-square {
+    width: 100%;
+    min-width: 100px;
+    white-space: normal;
+    font-size: 1.2em;
+    text-transform: capitalize;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .12);
+}
+
+
+
+.gs-button-square ion-icon,
+ion-icon {
+    font-size: 2em;
+}
+
+.gs-button-square img,
+img {
+    background: #fff;
+    padding: 5px;
+}
+
+.gs-button-square,
+.gs-button-square button,
+.gs-button-square .button-native,
+.gs-button-square ion-button {
+    width: 100%;
+    min-width: 150px;
+    min-height: 120px;
+    white-space: normal;
+    font-size: 1.2em;
+    background: #000;
+    color: #fff;
+    padding: 20px;
+    font-size: 1.5em;
+    margin: auto;
+    margin-top: 20px;
+
+    .grid-icon-label-cont {
+        font-size: 0.8em;
+    }
+}

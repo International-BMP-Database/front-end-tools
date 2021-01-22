@@ -1,0 +1,12 @@
+<ion-item>
+  <ion-label [position]="to.labelPosition">
+    {{ to.label }}
+    <span *ngIf="to.required && to.hideRequiredMarker !== true">*</span>
+  </ion-label>
+  <ion-range [value]="{ lower: to.defaultLow, upper: to.defaultHi }" pin="true" [mode]="to.mode" [color]="to.color"
+    [dualKnobs]="to.dualKnobs" [step]="to.step" [snaps]="to.snaps" [min]="to.min" [max]="to.max"
+    [formControl]="formControl" [formlyAttributes]="field">
+    <ion-label slot="start">{{ to.min }}</ion-label>
+    <ion-label slot="end">{{ to.max }}</ion-label>
+  </ion-range>
+</ion-item>

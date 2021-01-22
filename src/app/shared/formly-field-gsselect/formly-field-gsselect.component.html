@@ -1,0 +1,13 @@
+<ion-item>
+  <ion-label position="floating" class="ion-text-wrap" [position]="to.labelPosition">
+    {{ to.label }}
+    <span *ngIf="to.required && to.hideRequiredMarker !== true">*</span>
+  </ion-label>
+  <ion-select class="ion-text-wrap" [formControl]="formControl" [formlyAttributes]="field" [multiple]="to.multiple"
+    [interface]="to.interface">
+    <ion-select-option class="ion-text-wrap" *ngFor="let option of to.options | formlySelectOptions:field | async"
+      [value]="option.value">
+      {{ option.label }}
+    </ion-select-option>
+  </ion-select>
+</ion-item>

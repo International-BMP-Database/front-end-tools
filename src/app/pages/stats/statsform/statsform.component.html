@@ -1,0 +1,64 @@
+<div *ngIf="!isFromMapLink" class="gs-form-cont">
+  <!-- <div class="gs-form-cont"> -->
+
+  <div *ngIf="recordCountLoading && !shared.recordCount" class="gs-recordcounts-loading">Loading count of records
+    matched
+    by
+    current filter selection... <ion-spinner name="bubbles"></ion-spinner>
+  </div>
+
+  <div *ngIf="!recordCountLoading && shared.recordCount" class="gs-recordcounts">Currently query matches
+    <span *ngIf="shared.recordCount.inflow && shared.recordCount.inflow!= 0"> {{shared.recordCount.inflow}}
+      (inflow records),</span>
+    <span *ngIf="shared.recordCount.outflow && shared.recordCount.outflow!= 0">
+      {{shared.recordCount.outflow}} (outflow records)</span>
+    <span
+      *ngIf="(!shared.recordCount.inflow && !shared.recordCount.outflow) || (shared.recordCount.inflow== 0 && shared.recordCount.outflow== 0)">
+      {{shared.recordCount.outflow}} zero records</span>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <!--
+       <div (click)="openHelpPage()" class="text-center help-text"> Help </div>
+    <br>
+    -->
+    <formly-form (modelChange)="formChanges($event)" [form]="form" [fields]="formFields" [options]="frmlyOptions"
+      [model]="model">
+    </formly-form>
+    <p class="gs-buttonbar text-center">
+      <ion-button (click)="openHelpPage()" color="dark">
+        <ion-icon slot="start" name="help"></ion-icon>Help
+      </ion-button>
+      <ion-button color="light" outline icon-right (click)="cancelBtnH()">
+        <ion-icon name="close-circle"></ion-icon>Reset
+      </ion-button>
+      <ion-button icon-left type="submit" [disabled]="!model.parameter">
+        <!--  <ion-button icon-left type="submit" [disabled]="!model.parameter"> -->
+        <ion-icon name="checkmark-circle"></ion-icon>Submit
+      </ion-button>
+    </p>
+  </form>
+</div>
+<div class="text-center" *ngIf="model?.pollutantCategory">
+  <mat-expansion-panel [expanded]="openPanel === 1" (opened)="setOpenPanel(1)">
+    <mat-expansion-panel-header>
+      <mat-panel-title>Download Data</mat-panel-title>
+      <mat-panel-description></mat-panel-description>
+    </mat-expansion-panel-header>
+    <ion-segment mode="md" value="flat" shape="round">
+      <ion-segment-button value="flat" shape="round" (ionSelect)="segmentChanged('flat')">
+        <ion-label>All Data</ion-label>
+        <ion-icon name="checkmark"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="paired" shape="round" (ionSelect)="segmentChanged('paired')">
+        <ion-label>Paired Data Only</ion-label>
+        <ion-icon name="done-all"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+    <p class="gs-buttonbar text-center">
+      <ion-button color="dark" icon-left type="button" (click)="downloadData()" [disabled]="!model.parameter">
+        <ion-icon name="checkmark-circle"></ion-icon>Download
+      </ion-button>
+    </p>
+  </mat-expansion-panel>
+</div>

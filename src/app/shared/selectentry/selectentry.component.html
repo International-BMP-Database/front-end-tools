@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-toolbar transparent align-title="center">
+    <ion-title class="xgs-form-title text-center">{{pageTitle}}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="dark" (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content padding>
+  <div *ngIf="!payload || !payload.length">
+    <div> No locations created yet. Create a new location and select it to begin</div>
+  </div>
+  <div *ngIf="payload && payload.length >0">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+
+    <div class="gs-table-cont">
+      <table mat-table [dataSource]="tbl.tblDataSource" class="mat-elevation-z8 text-center" matSort matSortActive="id"
+        matSortDisableClear matSortDirection="asc">
+        <ng-container matColumnDef="actionsColumn">
+          <th mat-header-cell *matHeaderCellDef> Edit </th>
+          <mat-cell *matCellDef="let element">
+            <ion-button (click)="editEntity(element)" fill="clear">
+              <ion-icon slot="icon-only" name="create"></ion-icon>
+            </ion-button>
+          </mat-cell>
+        </ng-container>
+
+        <!-- date Column -->
+        <ng-container matColumnDef="dateCreated">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Created </th>
+          <td mat-cell *matCellDef="let element" (click)="tblRowClickH(element)">
+            {{element.dateCreated | date:'M/d/yy'}} </td>
+        </ng-container>
+
+        <!-- user given Column -->
+        <ng-container matColumnDef="userEntityName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <td mat-cell *matCellDef="let element" (click)="tblRowClickH(element)"> {{element.userEntityName}} </td>
+        </ng-container>
+
+        <!-- filled forms by Column use id field as dummy field since icons dont need field -->
+        <ng-container matColumnDef="icons">
+          <th mat-header-cell *matHeaderCellDef> Filled Forms </th>
+          <td mat-cell *matCellDef="let element" (click)="tblRowClickH(element)">
+            <span ngClass="{
+                      element.isProposedLoc: element.isProposedLoc,
+                      isArchiveLoc:element.InvestigationYear == '2016',
+                      isArchiveLoc:element.InvestigationYear == '2017',
+                      isArchiveLoc:element.InvestigationYear == 2017,
+                      isDeleted:element.isDeleted,
+                      isWrongLabel:element.isWrongLabel,
+                      gsLocHasWell:element.hasWell,
+                      hasMMRPFindingsLog:element.hasMMRPFindingsLog,
+                      hasdebrisFindingsLog:element.hasdebrisFindingsLog,  
+                      hasUVOSTScrnLog:element.hasUVOSTScrnLog,
+                      hasLeadScrnLog:element.hasLeadScrnLog,
+                      hasWaterLevelMeasLog:element.hasWaterLevelMeasLog,
+                      hasphotoLog:element.hasphotoLog,
+                      haspurgingLog:element.haspurgingLog,
+                      hasSampleLog:element.hasSampleLog,
+                      hasSoilBrng:element.hasSoilBrng,
+                      hassoilscreen:element.hassoilscreen,
+                      hasWellConstrLog:element.hasWellConstrLog,
+                      hasWellDevLog:element.hasWellDevLog
+                  }">
+              <i *ngIf="element.isDeleted" class="icon ion-minus-circled icon-right gsSideMenuImg gsBadData"></i>
+              <i *ngIf="element.isWrongLabel" class="icon ion-alert-circled icon-right gsSideMenuImg gsBadData"></i>
+
+              <img *ngIf="element.hasMMRPFindingsLog" class="icon icon-right gsSideMenuImg"
+                src="assets/imgs/symbols/18_MMRPFindingsLog.png">
+              <img *ngIf="element.hasdebrisFindingsLog" class="icon icon-right gsSideMenuImg"
+                src="assets/imgs/symbols/20_DebrisFindings.png">
+              <img *ngIf="element.hasWellConstrLog" class="icon icon-right gsSideMenuImg"
+                src="assets/imgs/symbols/11_WellConstruction.png">
+              <img *ngIf="element.hasUVOSTScrnLog" class="icon icon-right gsSideMenuImg"
+                src="assets/imgs/symbols/8_UVOST.png">
+              <img *ngIf="element.hasLeadScrnLog" class="icon icon-right gsSideMenuImg"
+                src="assets/imgs/symbols/9_XRF.png">
+              <img *ngIf="element.hasSoilBrng" class="icon icon-right gsSideMenuImg"
+                src="assets/imgs/symbols/10_SoilBoringLog.png">
+              <img *ngIf="element.hasWaterLevelMeasLog" class="icon icon-right gsSideMenuImg"
+                src="assets/imgs/symbols/13_GWLevel.png">
+              <img *ngIf="element.haspurgingLog" class="icon icon-right gsSideMenuImg"
+                src="assets/imgs/symbols/14_GWPurge.png">
+              <img *ngIf="element.hasWellDevLog" class="icon icon-right gsSideMenuImg"
+                src="assets/imgs/symbols/12_WellDevelopment.png">
+              <img *ngIf="element.hasSampleLog" class="icon icon-right gsSideMenuImg"
+                src="assets/imgs/symbols/15_Samples.png">
+              <img *ngIf="element.hasWellInventoryLog" class="icon icon-right gsSideMenuImg"
+                src="assets/imgs/symbols/wellInvent.png">
+              <img *ngIf="element.haslocateLine" class="icon icon-right gsSideMenuImg"
+                src="assets/imgs/symbols/utilLoc.png">
+            </span>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="tbl.displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row;   let even = even; columns: tbl.displayedColumns;"
+          [ngClass]="{gray: even, isProposedLoc:row?.isProposedLoc}"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons [length]="resultsLength"
+        [pageSize]="tbl.pageSize"></mat-paginator>
+    </div>
+  </div>
+</ion-content>

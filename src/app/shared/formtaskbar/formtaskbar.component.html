@@ -1,0 +1,25 @@
+<ion-toolbar color="dark">
+  <ion-buttons *ngIf="btns?.length !=0">
+    <ion-grid>
+      <ion-row>
+        <ng-container *ngFor="let itm of btns">
+          <ion-col *ngIf="itm.show">
+            <ion-button color="light" (click)="btnH(itm)">
+              {{itm.showText? itm.label:''}}
+              <ion-icon [slot]="itm.iconSlot" [name]="itm.icon"></ion-icon>
+            </ion-button>
+
+          </ion-col>
+        </ng-container>
+      </ion-row>
+    </ion-grid>
+
+  </ion-buttons>
+  <!--
+<ion-buttons slot="primary">
+    <ion-button color="danger">
+      <ion-icon slot="icon-only" name="more"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  -->
+</ion-toolbar>

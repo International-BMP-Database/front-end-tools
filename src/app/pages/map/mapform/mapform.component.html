@@ -1,0 +1,11 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <formly-form (modelChange)="formChanges($event)" [form]="form" [fields]="formFields" [options]="frmlyOptions"
+    [model]="model">
+  </formly-form>
+  <p class="gs-buttonbar text-center">
+    <ion-button (click)="openHelpPage()" color="dark"> Help </ion-button>
+    <ion-button color="light" outline icon-right (click)="resetBtnH()">Reset</ion-button>
+    <ion-button icon-left type="submit" [disabled]="!model.parameter && !model.bmpCategory && !model.siteType">Submit
+    </ion-button>
+  </p>
+</form>

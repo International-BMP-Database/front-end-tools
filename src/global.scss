@@ -1,0 +1,277 @@
+// add material design styles
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+// add openlayers related styles
+@import '../node_modules/ol-layerswitcher/src/ol-layerswitcher.css';
+@import './assets/css/olv5.3.0.css';
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+// begin map styles
+.ol-scale-line {
+  bottom: initial;
+  right: initial;
+  top: 95px;
+  left: 5px;
+}
+
+// end map styles
+
+// begin gs ionic overides
+.header-ios ion-toolbar:last-child {
+  --border-width: 0 0 0.55px;
+}
+
+body,
+html,
+ion-page {
+  --background: rgb(234, 234, 234);
+  background-color: rgb(234, 234, 234);
+}
+
+.gs-title-container {
+  height: 90px;
+  line-height: 90px;
+}
+
+ion-content,
+.content {
+  --background: rgb(234, 234, 234);
+  background-color: rgb(234, 234, 234);
+}
+
+.page {
+  padding-bottom: 120px;
+}
+
+// begin show scrollbars
+.alert-radio-group::-webkit-scrollbar,
+.alert-checkbox-group::-webkit-scrollbar {
+  width: 1em;
+  display: block !important;
+}
+
+.alert-radio-group::-webkit-scrollbar-track,
+.alert-checkbox-group::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.alert-radio-group::-webkit-scrollbar-thumb,
+.alert-checkbox-group::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+// end show scrollbars
+
+.logo-img,
+#logo-img {
+  position: absolute;
+  top: 0px;
+  max-width: 150px;
+  padding-top: 18px;
+  margin-right: 0px;
+}
+
+.gs-section {
+  --background: white;
+  background-color: white;
+  margin: 40px 0px;
+}
+
+// end gs ionic overides
+
+// begin gs styles
+.text-bold {
+  font-weight: bold;
+}
+
+.gs-tiny-text {
+  font-size: 12px;
+}
+
+.gsSmallText,
+input.gsSmallText,
+select.gsSmallText {
+  font-size: 80%;
+}
+
+select.gsSmallText {
+  padding-bottom: 15px;
+}
+
+.logo,
+.app-logo {
+  max-width: 150px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.gs-small {
+  font-size: 0.8em;
+  color: darkgray;
+}
+
+.header {
+  vertical-align: middle;
+  line-height: 60px;
+}
+
+.header-title img {
+  float: right;
+  height: 60px;
+  margin-right: 60px;
+}
+
+.gs-form-wrap {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  margin: 150px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+/* begin global form styles */
+ion-label,
+ion-label.item-input,
+.item-input .sc-ion-label-ios-h .item-input.sc-ion-label-md-h,
+.item-input .sc-ion-label-md-h {
+  max-width: 350px;
+}
+
+.popover-content,
+.popover-content sc-ion-popover-md {
+  width: 450px;
+}
+
+.popover-content.sc-ion-popover-md {
+  width: 450px;
+  border-radius: 4px;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+  white-space: normal;
+  font-size: 12px;
+
+  ion-label {
+    white-space: normal;
+  }
+}
+
+// wrap select text instead of cutting it off
+.select-text {
+  white-space: normal;
+}
+
+// Applies a text wrap on ion options
+.alert-tappable.alert-checkbox,
+.alert-tappable.alert-radio {
+  height: auto;
+  contain: content;
+}
+
+.alert-checkbox-label.sc-ion-alert-md,
+.alert-checkbox-label.sc-ion-alert-ios,
+.alert-radio-label.sc-ion-alert-md,
+.alert-radio-label.sc-ion-alert-ios {
+  white-space: normal;
+}
+
+// end form styles
+// begin material table styles
+td.mat-cell {
+  padding: 0 10px 0 10px;
+}
+
+// end material table styles
+// begin material tab styles
+.mat-tab-body-wrapper {
+  --background: rgb(245, 245, 247);
+  background-color: rgb(245, 245, 247);
+}
+
+.mat-tab-label {
+  background-color: white;
+  background-color: rgb(245, 245, 247);
+  margin-right: 24px;
+}
+
+.mat-tab-label .mat-tab-label-content {
+  color: #01579b;
+  font-size: 1.5em;
+}
+
+// end material tab styles
+
+.gs-list {
+  list-style-type: circle;
+  list-style-position: outside;
+  padding: 0px;
+
+  .gs-list-item {
+    margin-bottom: 10px;
+  }
+}
+
+/* begin plot styles */
+.js-plotly-plot .plotly div,
+.plot-container,
+.svg-container {
+  margin: auto !important;
+}
+
+/* end plot styles */
+a.custom-logo-link {
+  float: left;
+  max-width: 100%;
+  margin-bottom: 0;
+}
+
+.site-title {
+  padding: 20px 0 0 30px;
+  float: right;
+}
+
+.site-description {
+  display: block;
+  margin: 0;
+  padding: 50px 0 0 250px;
+  font-size: 12px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+// @media screen and (min-width: 800px)
+.site-navigation {
+  float: right;
+  max-width: 50%;
+  padding-top: 20px;
+}
+
+formly-field.flex-1.col.gsselect.secondary-filter,
+.secondary-filter {
+  ion-label {
+    color: blue;
+    padding-left: 40px;
+  }
+}
+
+.help-text {
+  color: blue;
+  text-decoration: underline;
+}

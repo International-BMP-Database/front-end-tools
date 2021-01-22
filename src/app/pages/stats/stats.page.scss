@@ -1,0 +1,81 @@
+.gs-hints {
+    width: 80%;
+    margin: auto;
+}
+
+.table-wrapper {
+    margin-bottom: 30px;
+    background: #fff;
+    padding: 10px;
+}
+
+// begin ceter material table and contents and header
+table {
+    width: 100%;
+    text-align: left;
+    background: #fff;
+
+    tr {
+        border-bottom: 1px solid #eee;
+    }
+
+    td {
+        padding: 5px;
+    }
+}
+
+
+.mat-header-cell {
+    text-align: center;
+}
+
+.gs-table-cont {
+    width: 100%;
+}
+
+.gs-table-cont table {
+    width: 100%;
+}
+
+th.mat-header-cell .mat-header-cell,
+mat-header-cell {
+    display: flex;
+    justify-content: flex-end;
+    color: #3880ff;
+    font-weight: bold;
+}
+
+tr.mat-row {
+    height: 28px;
+}
+
+td.mat-cell,
+td.mat-footer-cell,
+th.mat-header-cell {
+    text-align: center;
+}
+
+td.mat-cell {
+    padding: 0 10px 0 10px;
+}
+
+// end center material table and contents and header
+
+// begin chart container styles
+app-plotlychart {
+    width: 100%;
+    min-height: 40%;
+    min-height: 40vh;
+}
+
+.cont-statsform {
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.gs-small-text {
+    font-size: 12px;
+    color: darkgray;
+    display: block;
+    text-align: center;
+}

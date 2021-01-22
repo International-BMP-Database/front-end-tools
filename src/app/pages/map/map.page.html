@@ -1,0 +1,43 @@
+<ion-content>
+  <app-bigmap>Test Map Component</app-bigmap>
+  <div class="gs-panel-cont gs-panel-cont-transp">
+    <!-- fab placed to the top and end and on the top edge of the content overlapping header -->
+    <ion-fab (click)="showLayers()" vertical="top" horizontal="start" edge slot="fixed">
+      <ion-fab-button color="primary">
+        <ion-icon name="apps" mode="ios"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <br /><br /><br />
+    <mat-expansion-panel
+      [expanded]="openPanel === 0"
+      (opened)="setOpenPanel(0)"
+      (closed)="setOpenPanel(-1)"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title *ngIf="openPanel !== 0">Show Filters</mat-panel-title>
+        <mat-panel-title *ngIf="openPanel === 0">Hide Filters</mat-panel-title>
+        <mat-panel-description></mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-mapform
+        (submitEvt)="querySubmitH($event)"
+        (resetBtnEvt)="queryResetH($event)"
+      ></app-mapform>
+    </mat-expansion-panel>
+    <mat-expansion-panel
+      [expanded]="openPanel === 1"
+      (opened)="setOpenPanel(1)"
+      (closed)="setOpenPanel(-1)"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title *ngIf="openPanel !== 1">Show Legend</mat-panel-title>
+        <mat-panel-title *ngIf="openPanel === 1">Hide Legend</mat-panel-title>
+        <mat-panel-description></mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-maplegend
+        #maplegend
+        *ngIf="BMPSites && BMPSites.length"
+        [bmpSites]="BMPSites"
+      ></app-maplegend>
+    </mat-expansion-panel>
+  </div>
+</ion-content>

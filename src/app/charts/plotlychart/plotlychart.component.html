@@ -1,0 +1,16 @@
+<div class="gs-cont">
+  <plotly-plot *ngIf="graph && graph.traces" [data]="graph.traces" [layout]="graph.layout" [useResizeHandler]="true"
+    [style]="{position: 'relative', width: '100%', height: '90%'}"></plotly-plot>
+  <div class="gs-hints">
+    <div>In the interactive plots above,
+      you can:</div>
+    <ul>
+      <li>Zoom in by dragging a rectangle around the selected area</li>
+      <li>Pan the plot at a given zoom level</li>
+      <li>Reset the zoom and center point of the plot by double clicking on the plot or selecting the autoscale icon
+      </li>
+      <li>Hover around points to get more information or compare points for a given x-value</li>
+      <li>Turn on/off datasets from each plot by clicking on legend items</li>
+    </ul>
+  </div>
+</div>

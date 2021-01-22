@@ -1,0 +1,20 @@
+<ion-toolbar color="light">
+  <ion-buttons>
+    <ion-button *ngIf="!payload?.utilLocateMode" color="dark" (click)="selectFeatureHandler()" fill="outline">
+      Find Feature
+      <ion-icon slot="start" name="locate"></ion-icon>
+    </ion-button>
+
+    <ion-button color="dark" (click)="showHideLegendOnMap()" fill="outline">
+      <!-- Show/Hide Legend --> Legend
+      <ion-icon slot="start" name="list"></ion-icon>
+    </ion-button>
+
+    <ion-button color="dark" (click)="showMapLayersModal()" fill="outline">
+      <!-- Show/Hide Layers--> Layers
+      <ion-icon slot="start" name="logo-buffer"></ion-icon>
+    </ion-button>
+
+  </ion-buttons>
+
+</ion-toolbar>

@@ -1,0 +1,16 @@
+img {
+    max-width: 24px;
+}
+
+.gray {
+    background-color: #f5f5f5;
+    // border: 1px solid #eee;
+}
+
+.isProposedLoc {
+    .mat-cell {
+        color: rgb(56, 128, 255); // @TODO: replace with primary blue
+        font-weight: bold;
+        background-color: rgb(240, 243, 201);
+    }
+}

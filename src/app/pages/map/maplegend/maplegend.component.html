@@ -1,0 +1,153 @@
+<!-- BEGIN LEGEND -->
+<div class="list-cont">
+  <ion-list id="bigmaplegend">
+
+    <ion-item *ngIf="bmpSiteCounts['Bioretention']">
+      <svg class="svg-circleplus" height="20" width="20" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" fill="green" stroke="yellow" stroke-width="9"></circle>
+        <line x1="0" y1="50" x2="100" y2="50" stroke="yellow" stroke-width="9"></line>
+        <line x1="50" y1="0" x2="50" y2="100" stroke="yellow" stroke-width="9"></line>
+      </svg>
+      <ion-label>&nbsp;&nbsp; Bioretention ({{bmpSiteCounts['Bioretention']}})</ion-label>
+    </ion-item>
+    <ion-item *ngIf="bmpSiteCounts['Composite']">
+      <svg class="svg-circleplus" height="20" width="20" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" fill="yellow" stroke="black" stroke-width="9"></circle>
+        <line x1="0" y1="50" x2="100" y2="50" stroke="black" stroke-width="9"></line>
+        <line x1="50" y1="0" x2="50" y2="100" stroke="black" stroke-width="9"></line>
+      </svg>
+      <ion-label>&nbsp;&nbsp; Composite ({{bmpSiteCounts['Composite']}})</ion-label>
+    </ion-item>
+    <ion-item *ngIf="bmpSiteCounts['Control']">
+      <svg height="20" width="20">
+        <circle cx="10" cy="10" r="8" stroke="black" stroke-width="2" fill="turquoise" />
+      </svg>
+      <ion-label>&nbsp;&nbsp; Control ({{bmpSiteCounts['Control']}})</ion-label>
+    </ion-item>
+    <ion-item *ngIf="bmpSiteCounts['Detention Basin']">
+      <svg height="20" width="20">
+        <rect width="20" height="20" stroke="black" stroke-width="4" fill="steelblue" />
+      </svg>
+      <ion-label>&nbsp;&nbsp; Detention Basin ({{bmpSiteCounts['Detention Basin']}})</ion-label>
+    </ion-item>
+    <ion-item *ngIf="bmpSiteCounts['Education']">
+      <svg height="20" width="20">
+        <rect width="20" height="20" stroke="black" stroke-width="4" fill="#fdd835" />
+      </svg>
+      <ion-label>&nbsp;&nbsp; Education ({{bmpSiteCounts['Education']}})</ion-label>
+    </ion-item>
+    <ion-item *ngIf="bmpSiteCounts['Grass Swale']">
+      <svg height="20" width="20">
+        <rect width="20" height="20" stroke="black" stroke-width="4" fill="green" />
+      </svg>
+      <ion-label>&nbsp;&nbsp; Grass Swale ({{bmpSiteCounts['Grass Swale']}})</ion-label>
+    </ion-item>
+    <ion-item *ngIf="bmpSiteCounts['Grass Strip']">
+      <svg class="svg-circleplus" height="20" width="20" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" fill="green" stroke="orange" stroke-width="9"></circle>
+        <line x1="0" y1="50" x2="100" y2="50" stroke="orange" stroke-width="9"></line>
+        <line x1="50" y1="0" x2="50" y2="100" stroke="orange" stroke-width="9"></line>
+      </svg>
+      <ion-label>&nbsp;&nbsp; Grass Strip ({{bmpSiteCounts['Grass Strip']}})</ion-label>
+    </ion-item>
+    <ion-item *ngIf="bmpSiteCounts['Green Roof']">
+      <svg height="20" width="20">
+        <rect width="20" height="20" stroke="black" stroke-width="4" fill="steelblue" />
+      </svg>
+      <ion-label>&nbsp;&nbsp; Green Roof ({{bmpSiteCounts['Green Roof']}})
+      </ion-label>
+    </ion-item>
+    <ion-item *ngIf="bmpSiteCounts['Infiltration Basin']">
+      <svg height="20" width="20">
+        <rect width="18" height="18" stroke-dasharray="4" stroke="black" stroke-width="2" fill="rgba(0,0,0,0.2)" />
+      </svg>
+      <ion-label>&nbsp;&nbsp; Infiltration Basin ({{bmpSiteCounts['Infiltration Basin']}})</ion-label>
+    </ion-item>
+    <ion-item *ngIf="bmpSiteCounts['LID']">
+      <svg height="20" width="20">
+        <circle cx="10" cy="10" r="8" stroke="gray" stroke-width="2" fill="yellow" />
+      </svg>
+      <ion-label>&nbsp;&nbsp; LID ({{bmpSiteCounts['LID']}})</ion-label>
+    </ion-item>
+    <ion-item *ngIf="bmpSiteCounts['Maintenance Practice']">
+      <svg class="svg-circleplus" height="20" width="20" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" fill="white" stroke="red" stroke-width="9"></circle>
+        <line x1="0" y1="50" x2="100" y2="50" stroke="red" stroke-width="9"></line>
+        <line x1="50" y1="0" x2="50" y2="100" stroke="red" stroke-width="9"></line>
+      </svg>
+      <ion-label>&nbsp;&nbsp; Maintenance Practice ({{bmpSiteCounts['Maintenance Practice']}})</ion-label>
+    </ion-item>
+    <ion-item *ngIf="bmpSiteCounts['Manufactured Device']">
+      <svg height="20" width="20" viewBox="0 0 100 100">
+        <polygon points="50,0, 0,100, 100,100" style="fill:rgb(245, 87, 245);stroke:black;stroke-width:15" />
+      </svg>
+      <ion-label>&nbsp;&nbsp; Manufacturued Device ({{bmpSiteCounts['Manufactured Device']}})</ion-label>
+    </ion-item>
+
+    <ion-item *ngIf="bmpSiteCounts['Media Filter']">
+      <svg height="20" width="20">
+        <rect width="18" height="18" stroke="yellow" stroke-width="4" fill="green" />
+      </svg>
+      <ion-label>&nbsp;&nbsp; Media Filter ({{bmpSiteCounts['Media Filter']}}</ion-label>
+    </ion-item>
+    <ion-item *ngIf="bmpSiteCounts['Other']">
+      <svg height="20" width="20" viewBox="0 0 100 100">
+        <polygon points="50,0, 0,100, 100,100" style="fill:gray;stroke:lightgray;stroke-width:9" />
+      </svg>
+      <ion-label>&nbsp;&nbsp; Other ({{bmpSiteCounts['Other']}})</ion-label>
+    </ion-item>
+    <ion-item *ngIf="bmpSiteCounts['Percolation Trench']">
+      <svg height="20" width="20">
+        <rect width="18" height="18" stroke="black" stroke-width="2" fill="rgba(255, 0, 0, 0.8)" />
+      </svg>
+      <ion-label>&nbsp;&nbsp; Percolation Trench ({{bmpSiteCounts['Percolation Trench']}})</ion-label>
+    </ion-item>
+    <ion-item *ngIf="bmpSiteCounts['Percolation Trench/Well']">
+      <svg height="20" width="20">
+        <rect width="18" height="18" stroke="black" stroke-width="2" fill="rgba(255, 0, 0, 0.8)" />
+      </svg>
+      <ion-label>&nbsp;&nbsp; Percolation Trench/Well ({{bmpSiteCounts['Percolation Trench/Well']}})</ion-label>
+    </ion-item>
+    <ion-item *ngIf="bmpSiteCounts['Porous Pavement']">
+      <svg height="20" width="20">
+        <rect width="20" height="20" stroke="black" style="fill:gray;stroke:black;stroke-width:3" />
+      </svg>
+      <ion-label>&nbsp;&nbsp; Porous Pavement ({{bmpSiteCounts['Porous Pavement']}})</ion-label>
+    </ion-item>
+
+    <ion-item *ngIf="bmpSiteCounts['Permeable Friction Course']">
+      <svg height="20" width="20" viewBox="0 0 100 100">
+        <polygon points="50,0, 0,100, 100,100" style="fill:rgb(134, 97, 26);stroke:black;stroke-width:9" />
+      </svg>
+      <ion-label>&nbsp;&nbsp; Permeable Friction Course ({{bmpSiteCounts['Permeable Friction Course']}})</ion-label>
+    </ion-item>
+
+    <ion-item *ngIf="bmpSiteCounts['Rainwater Harvesting']">
+      <svg height="20" width="20">
+        <polygon points="10,1 4,20 20,8 1,8 16,20" style="fill:rgb(63, 159, 236);stroke:black;stroke-width:1;" />
+      </svg>
+      <ion-label>&nbsp;&nbsp; Rainwater Harvesting ({{bmpSiteCounts['Rainwater Harvesting']}})</ion-label>
+    </ion-item>
+
+    <ion-item *ngIf="bmpSiteCounts['Retention Pond']">
+      <svg height="20" width="20">
+        <rect width="18" height="18" stroke="black" style="fill:blue;stroke:black;stroke-width:3" />
+      </svg>
+      <ion-label>&nbsp;&nbsp; Retention Pond ({{bmpSiteCounts['Retention Pond']}})</ion-label>
+    </ion-item>
+    <ion-item *ngIf="bmpSiteCounts['Wetland Basin']">
+      <svg height="20" width="20">
+        <polygon points="10,1 4,20 20,8 1,8 16,20" style="fill:lime;stroke:black;stroke-width:1;" />
+      </svg>
+      <ion-label>&nbsp;&nbsp; Wetland Basin ({{bmpSiteCounts['Wetland Basin']}})</ion-label>
+    </ion-item>
+    <ion-item *ngIf="bmpSiteCounts['Wetland Channel']">
+      <svg height="20" width="20">
+        <rect width="18" height="18" stroke="red" stroke-width="2" fill="lime" />
+      </svg>
+      <ion-label>&nbsp;&nbsp; Wetland Channel ({{bmpSiteCounts['Wetland Channel']}})</ion-label>
+    </ion-item>
+  </ion-list>
+</div>
+
+<!-- END LEGEND -->

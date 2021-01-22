@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar transparent align-title="center">
+    <ion-title class="xgs-form-title text-center">{{pageTitle}}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="dark" (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content padding>
+  <div *ngIf="!payload || !payload.length">
+    <div> No locations created yet. Create a new location and select it to begin</div>
+  </div>
+  <div *ngIf="payload && payload.length >0">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+
+    <div class="gs-table-cont text-left">
+      <table mat-table [dataSource]="tbl.tblDataSource" class="mat-elevation-z8 text-left">
+
+        <!-- well id  Column -->
+        <ng-container matColumnDef="wellID">
+          <th mat-header-cell *matHeaderCellDef> Well ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.wellID}} </td>
+        </ng-container>
+
+        <!-- installDate Column -->
+        <ng-container matColumnDef="installDate" class="text-left">
+          <th mat-header-cell *matHeaderCellDef> Install Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.installDate}} </td>
+        </ng-container>
+
+
+        <!-- wellOwnerColumn -->
+        <ng-container matColumnDef="wellOwner">
+          <th mat-header-cell *matHeaderCellDef> Well Owner </th>
+          <td mat-cell *matCellDef="let element"> {{element.wellOwner}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="tbl.displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: tbl.displayedColumns;" (click)="tblRowClickH(row)"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons [length]="resultsLength"
+        [pageSize]="tbl.pageSize"></mat-paginator>
+    </div>
+  </div>
+</ion-content>

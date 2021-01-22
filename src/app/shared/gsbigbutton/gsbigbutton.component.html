@@ -1,0 +1,9 @@
+<div tappable size="large" text-wrap class="text-center gs-big-button gs-button-square">
+
+  <ion-icon *ngIf="!payload.imgsrc" slot="start" [name]="payload.icon"></ion-icon>
+  <img style="width:32px; height:32px; margin-bottom:5px;" class="sidemenu-icon" *ngIf="payload.imgsrc"
+    class="icon icon-right gsSideMenuImg" [src]="payload.imgsrc" alt="icon" />
+
+
+  <div class="grid-icon-label-cont">{{payload.label}}</div>
+</div>

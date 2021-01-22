@@ -1,0 +1,10 @@
+<ion-item>
+  <ion-label>
+    {{ to.label }}
+    <span *ngIf="to.required && to.hideRequiredMarker !== true">*</span>
+  </ion-label>
+  <ion-button (click)="to.onClick($event)">
+    {{ to.buttontext }}
+    <ion-icon slot="end" [color]="to.color" [name]="to.iconname"></ion-icon>
+  </ion-button>
+</ion-item>
