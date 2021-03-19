@@ -53,7 +53,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "baseHref": "/",
+              "baseHref": "/InternationalBMPDBAssets/tools/stats_map/v2/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
