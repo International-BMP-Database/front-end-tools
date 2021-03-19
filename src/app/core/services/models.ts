@@ -4,6 +4,7 @@ import { Tile as TileLayer, Vector as VectorLayer, Group as GroupedLayers } from
 // import 'rxjs/add/operator/map';
 
 export class PlotData {
+  allData: PairedData[];
   maxpt: number;
   minpt: number;
 
@@ -35,7 +36,9 @@ export class PlotData {
 }
 
 export class PlotDataAll {
-  allData: [];
+  allData: PairedData[];
+  maxpt: number;
+  minpt: number;
   inflowDates: Date[];
   inflowValues: number[];
   inflowNDValues: number[];
