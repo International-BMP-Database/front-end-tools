@@ -435,12 +435,23 @@ export class MapService extends AbstractengineService {
               coords = coords[0];
             }
             const pdfID = this.pad(entity.pdf_id, 5);
+            // fix photo paths
+            if (entity.photo_url) {
+              entity.photo_url = entity.photo_url.map((itm) =>
+                itm.replace(
+                  'http://www.bmpdatabase.org/database/pdf/P/',
+                  'https://igeowater.com/InternationalBMPDBAssets/Photo/'
+                )
+              );
+            }
             this.selectedSite = {
               ...entity,
-              summaryReportLink: `http://www.bmpdatabase.org/Database/pdf/DESCP/${pdfID}--DESCP.pdf`,
-              flowReportLink: `http://www.bmpdatabase.org/Database/pdf/SummaryOfPrecipAndVolume/Precip_Volume_${pdfID}.pdf`,
+              summaryReportLink: `https://igeowater.com/InternationalBMPDBAssets/PDF/Description/${pdfID}--DESCP.pdf`,
+              flowReportLink: `https://igeowater.com/InternationalBMPDBAssets/PDF/PrecipAndVolume/Precip_Volume_${pdfID}.pdf`,
               cleanParams: this.tranformParams(entity.parameters || null),
             };
+            debugger;
+
             this.popupOverLay.setPosition(coords);
           }
         }
